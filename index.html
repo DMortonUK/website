@@ -2,150 +2,157 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  
-  <meta name="description" content="Doug Morton">
-  <meta property="og:title" content="Doug Morton">
-  <meta name="twitter:title" content="Doug Morton">
-  <meta property="og:description" content="Doug Morton">
-  <meta name="twitter:description" content="Doug Morton">
-   <!--
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <meta name="description" content="Doug Morton">
+    <meta property="og:title" content="Doug Morton">
+    <meta name="twitter:title" content="Doug Morton">
+    <meta property="og:description" content="Doug Morton">
+    <meta name="twitter:description" content="Doug Morton">
+    <!--
   <meta property="og:image" content="" />
   <meta name="twitter:image" content="" />
   <meta name="twitter:card" content="summary_large_image">
   -->
-  <meta name="twitter:site" content="@DMortonUK">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://dougmorton.com/">
-  <meta name="author" content="Doug Morton">
+    <meta name="twitter:site" content="@DMortonUK">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dougmorton.com/">
+    <meta name="author" content="Doug Morton">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Mitr&family=Red+Hat+Display:wght@300&display=swap" as="style">
-  <link href="https://fonts.googleapis.com/css2?family=Mitr&family=Red+Hat+Display:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Mitr&family=Red+Hat+Display:wght@300&display=swap" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Mitr&family=Red+Hat+Display:wght@300&display=swap"
+        rel="stylesheet">
 
-  <title>Doug Morton</title>
+    <title>Doug Morton</title>
 
-  <style>
-    :root {
-      --background-color: #000;
-      --highlight-color: #fff;
-      --max-width: 1600px;
-      --font-family: "Red Hat Display", sans-serif;
-      --main-font-weight: 300;
-    }
+    <style>
+        :root {
+            --background-color: #000;
+            --highlight-color: #fff;
+            --max-width: 1600px;
+            --font-family: "Red Hat Display", sans-serif;
+            --main-font-weight: 300;
+        }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: var(--font-family);
-      font-weight: var(--main-font-weight);
-      font-size: 0.95rem;
-      line-height: 0.98;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: var(--font-family);
+            font-weight: var(--main-font-weight);
+            font-size: 0.95rem;
+            line-height: 0.98;
+        }
 
-    body {
-      display: flex;
-      flex-direction: column;
-      height: 100vh;
-      background-color: var(--background-color);
-      color: var(--highlight-color);
-      max-width: var(--max-width);
-      margin: 0 auto;
-      overflow-x: hidden;
-    }
+        body {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            background-color: var(--background-color);
+            color: var(--highlight-color);
+            max-width: var(--max-width);
+            margin: 0 auto;
+            overflow-x: hidden;
+        }
 
-    canvas {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 100%;
-      min-width: 512px;
-      min-height: 100%;
-      object-fit: cover;
-      filter: invert(100%) sepia(100%) hue-rotate(305deg) saturate(500%) brightness(0.2);
-      opacity: 1;
-      z-index: -1;
-    }
+        canvas {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            min-width: 512px;
+            min-height: 100%;
+            object-fit: cover;
+            filter: invert(100%) sepia(100%) hue-rotate(305deg) saturate(500%) brightness(0.2);
+            opacity: 1;
+            z-index: -1;
+        }
 
-    .container {
-      max-width: 800px;
-      height: 100%;
-      flex-direction: column;
-      justify-content: space-between;
-      display: flex; /* this line */
-      position: relative; /* and this line */
-      mix-blend-mode: difference;
+        .container {
+            max-width: 800px;
+            height: 100%;
+            flex-direction: column;
+            justify-content: space-between;
+            display: flex;
+            position: relative;
+            mix-blend-mode: difference;
 
-    }
+        }
 
-    .container::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      right: -1rem;
-      width: 1rem;
-      height: 100%;
-      background-color: var(--highlight-color);
-      pointer-events: none;
-    }
+        .container::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: -1rem;
+            width: 1rem;
+            height: 100%;
+            background-color: var(--highlight-color);
+            pointer-events: none;
+        }
 
-    .title {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      z-index: 1;
-    }
+        .title {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            z-index: 1;
+        }
 
-    h1 {
-      font-family: "Mitr", sans-serif;
-      font-size: min(26vw, 10rem);
-      margin: 0.2rem;
-      text-align: right;
-      line-height: 0.75;
-      color: var(--highlight-color);
-    }
+        .title a {
+            text-decoration: none;
+            color: inherit;
+        }
 
-    .footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin: 1rem 0.5rem;
-      font-size: 0.8rem;
-    }
+        h1 {
+            font-family: "Mitr", sans-serif;
+            font-size: min(26vw, 10rem);
+            margin: 0.2rem;
+            text-align: right;
+            line-height: 0.75;
+            color: var(--highlight-color);
+        }
 
-    .footer a {
-      text-decoration: none;
-      color: inherit;
-    }
+        .footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 1rem 0.5rem;
+            font-size: 0.8rem;
+        }
 
-    .nav-link {
-      display: flex;
-      align-items: center;
-    }
+        .footer a {
+            text-decoration: none;
+            color: inherit;
+        }
 
-    .nav-icon {
-      width: 1rem;
-      height: 1rem;
-      margin-right: 0.2em;
-      opacity: 0.7;
-      transition: opacity 0.3s;
-    }
+        .nav-link {
+            display: flex;
+            align-items: center;
+        }
 
-    .nav-link:hover .nav-icon {
-      opacity: 1;
-    }
-  </style>
-  <script type="x-webgl/x-vertex-shader" id="vertex-shader">
+        .nav-icon {
+            width: 1rem;
+            height: 1rem;
+            margin-right: 0.2em;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+
+        .nav-link:hover .nav-icon {
+            opacity: 1;
+        }
+    </style>
+    <script type="x-webgl/x-vertex-shader" id="vertex-shader">
     attribute vec2 a_position; void main() { gl_Position = vec4(a_position, 0, 1); }
   </script>
-<script type="x-webgl/x-fragment-shader" id="timestep-shader">
+    <script type="x-webgl/x-fragment-shader" id="timestep-shader">
     precision mediump float; uniform sampler2D u_image; uniform vec2 u_size; const float F = 0.0545, K = 0.062, D_a = 0.2, D_b = 0.1; const float TIMESTEP = 1.0; void main() { vec2 p = gl_FragCoord.xy, n = p + vec2(0.0, 1.0), e = p + vec2(1.0, 0.0), s = p + vec2(0.0, -1.0), w = p + vec2(-1.0, 0.0); vec2 val = texture2D(u_image, p / u_size).xy, laplacian = texture2D(u_image, n / u_size).xy + texture2D(u_image, e / u_size).xy + texture2D(u_image, s / u_size).xy + texture2D(u_image, w / u_size).xy - 4.0 * val; vec2 delta = vec2(D_a * laplacian.x - val.x*val.y*val.y + F * (1.0-val.x), D_b * laplacian.y + val.x*val.y*val.y - (K+F) * val.y); gl_FragColor = vec4(val + delta * TIMESTEP, 0, 0); }
   </script>
-<script type="x-webgl/x-fragment-shader" id="render-shader">
+    <script type="x-webgl/x-fragment-shader" id="render-shader">
     precision mediump float; uniform sampler2D u_image; uniform vec2 u_size; const float COLOR_MIN = 0.3, COLOR_MAX = 0.5; void main() { float v = (COLOR_MAX - texture2D(u_image, gl_FragCoord.xy / u_size).y) / (COLOR_MAX - COLOR_MIN); gl_FragColor = vec4(v, v, v, 1); }
   </script>
 </head>
@@ -153,221 +160,224 @@
 <body>
     <script>
         var W = 512,
-          H = 512
-    
+            H = 512
+
         function init() {
-          var canvas = document.createElement("canvas")
-          canvas.id = "canvas"
-          canvas.width = W
-          canvas.height = H
-          document.body.appendChild(canvas)
-          var gl =
-            canvas.getContext("webgl") || canvas.getContext("experimental-webgl")
-          checkCompatibility(gl)
-          var vertex_shader = createShader(gl, gl.VERTEX_SHADER, "vertex-shader"),
-            timestep_shader = createShader(
-              gl,
-              gl.FRAGMENT_SHADER,
-              "timestep-shader",
+            var canvas = document.createElement("canvas")
+            canvas.id = "canvas"
+            canvas.width = W
+            canvas.height = H
+            document.body.appendChild(canvas)
+            var gl =
+                canvas.getContext("webgl") || canvas.getContext("experimental-webgl")
+            checkCompatibility(gl)
+            var vertex_shader = createShader(gl, gl.VERTEX_SHADER, "vertex-shader"),
+                timestep_shader = createShader(
+                    gl,
+                    gl.FRAGMENT_SHADER,
+                    "timestep-shader",
+                ),
+                render_shader = createShader(gl, gl.FRAGMENT_SHADER, "render-shader")
+            var timestep_prog = createAndLinkProgram(
+                gl,
+                vertex_shader,
+                timestep_shader,
             ),
-            render_shader = createShader(gl, gl.FRAGMENT_SHADER, "render-shader")
-          var timestep_prog = createAndLinkProgram(
-            gl,
-            vertex_shader,
-            timestep_shader,
-          ),
-            render_prog = createAndLinkProgram(gl, vertex_shader, render_shader)
-          gl.useProgram(render_prog)
-          loadVertexData(gl, render_prog)
-          gl.uniform2f(gl.getUniformLocation(render_prog, "u_size"), W, H)
-          gl.useProgram(timestep_prog)
-          loadVertexData(gl, timestep_prog)
-          gl.uniform2f(gl.getUniformLocation(timestep_prog, "u_size"), W, H)
-          var initial_state = getInitialState()
-          var t1 = newTexture(gl, initial_state),
-            t2 = newTexture(gl, null),
-            fb1 = newFramebuffer(gl, t1),
-            fb2 = newFramebuffer(gl, t2)
-          // Check the hardware can render to a float framebuffer
-          // (https://developer.mozilla.org/en-US/docs/Web/WebGL/WebGL_best_practices)
-          gl.useProgram(timestep_prog)
-          gl.bindFramebuffer(gl.FRAMEBUFFER, fb1)
-          var fb_status = gl.checkFramebufferStatus(gl.FRAMEBUFFER)
-          if (fb_status != gl.FRAMEBUFFER_COMPLETE) {
-            fail("Cannot render to framebuffer: " + fb_status)
-          }
-    
-          function step() {
-            gl.useProgram(timestep_prog)
-            for (var i = 0; i < 40; i++) {
-              gl.bindTexture(gl.TEXTURE_2D, [t1, t2][i % 2])
-              gl.bindFramebuffer(gl.FRAMEBUFFER, [fb2, fb1][i % 2])
-              gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4)
-            }
+                render_prog = createAndLinkProgram(gl, vertex_shader, render_shader)
             gl.useProgram(render_prog)
-            gl.bindTexture(gl.TEXTURE_2D, t1)
-            gl.bindFramebuffer(gl.FRAMEBUFFER, null)
-            gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4)
-          }
-          var af
-    
-          function frame() {
-            step()
+            loadVertexData(gl, render_prog)
+            gl.uniform2f(gl.getUniformLocation(render_prog, "u_size"), W, H)
+            gl.useProgram(timestep_prog)
+            loadVertexData(gl, timestep_prog)
+            gl.uniform2f(gl.getUniformLocation(timestep_prog, "u_size"), W, H)
+            var initial_state = getInitialState()
+            var t1 = newTexture(gl, initial_state),
+                t2 = newTexture(gl, null),
+                fb1 = newFramebuffer(gl, t1),
+                fb2 = newFramebuffer(gl, t2)
+            // Check the hardware can render to a float framebuffer
+            // (https://developer.mozilla.org/en-US/docs/Web/WebGL/WebGL_best_practices)
+            gl.useProgram(timestep_prog)
+            gl.bindFramebuffer(gl.FRAMEBUFFER, fb1)
+            var fb_status = gl.checkFramebufferStatus(gl.FRAMEBUFFER)
+            if (fb_status != gl.FRAMEBUFFER_COMPLETE) {
+                fail("Cannot render to framebuffer: " + fb_status)
+            }
+
+            function step() {
+                gl.useProgram(timestep_prog)
+                for (var i = 0; i < 40; i++) {
+                    gl.bindTexture(gl.TEXTURE_2D, [t1, t2][i % 2])
+                    gl.bindFramebuffer(gl.FRAMEBUFFER, [fb2, fb1][i % 2])
+                    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4)
+                }
+                gl.useProgram(render_prog)
+                gl.bindTexture(gl.TEXTURE_2D, t1)
+                gl.bindFramebuffer(gl.FRAMEBUFFER, null)
+                gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4)
+            }
+            var af
+
+            function frame() {
+                step()
+                af = requestAnimationFrame(frame)
+            }
             af = requestAnimationFrame(frame)
-          }
-          af = requestAnimationFrame(frame)
         }
-    
+
         function getInitialState() {
-          var a = new Float32Array(4 * W * H)
-          for (var y = 0; y < H; y++) {
-            for (var x = 0; x < W; x++) {
-              var i = W * y + x
-              var central_square =
-                x > W / 2 - 10 &&
-                x < W / 2 + 10 &&
-                y > H / 2 - 10 &&
-                y < H / 2 + 10
-              if (central_square) {
-                a[4 * i + 0] = 0.5 + Math.random() * 0.02 - 0.01
-                a[4 * i + 1] = 0.25 + Math.random() * 0.02 - 0.01
-              } else {
-                a[4 * i + 0] = 1.0 - x / W // create a gradient for 'a' based on x-coordinate
-                a[4 * i + 1] = y / H // create a gradient for 'b' based on y-coordinate
-              }
+            var a = new Float32Array(4 * W * H)
+            for (var y = 0; y < H; y++) {
+                for (var x = 0; x < W; x++) {
+                    var i = W * y + x
+                    var central_square =
+                        x > W / 2 - 10 &&
+                        x < W / 2 + 10 &&
+                        y > H / 2 - 10 &&
+                        y < H / 2 + 10
+                    if (central_square) {
+                        a[4 * i + 0] = 0.5 + Math.random() * 0.02 - 0.01
+                        a[4 * i + 1] = 0.25 + Math.random() * 0.02 - 0.01
+                    } else {
+                        a[4 * i + 0] = 1.0 - x / W // create a gradient for 'a' based on x-coordinate
+                        a[4 * i + 1] = y / H // create a gradient for 'b' based on y-coordinate
+                    }
+                }
             }
-          }
-          return a
+            return a
         }
-    
+
         function getInitialState() {
-          var a = new Float32Array(4 * W * H)
-          for (var y = 0; y < H; y++) {
-            for (var x = 0; x < W; x++) {
-              var i = W * y + x
-              a[4 * i + 0] = 1.0 - x / W // create a gradient for 'a' based on x-coordinate
-              a[4 * i + 1] = y / H // create a gradient for 'b' based on y-coordinate
+            var a = new Float32Array(4 * W * H)
+            for (var y = 0; y < H; y++) {
+                for (var x = 0; x < W; x++) {
+                    var i = W * y + x
+                    a[4 * i + 0] = 1.0 - x / W // create a gradient for 'a' based on x-coordinate
+                    a[4 * i + 1] = y / H // create a gradient for 'b' based on y-coordinate
+                }
             }
-          }
-          return a
+            return a
         }
         // Create, initialise, and bind a new texture
         function newTexture(gl, initial_state) {
-          var texture = gl.createTexture()
-          gl.bindTexture(gl.TEXTURE_2D, texture)
-          gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST)
-          gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST)
-          gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.REPEAT)
-          gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.REPEAT)
-          gl.texImage2D(
-            gl.TEXTURE_2D,
-            0,
-            gl.RGBA,
-            W,
-            H,
-            0,
-            gl.RGBA,
-            gl.FLOAT,
-            initial_state,
-          )
-          return texture
+            var texture = gl.createTexture()
+            gl.bindTexture(gl.TEXTURE_2D, texture)
+            gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST)
+            gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST)
+            gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.REPEAT)
+            gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.REPEAT)
+            gl.texImage2D(
+                gl.TEXTURE_2D,
+                0,
+                gl.RGBA,
+                W,
+                H,
+                0,
+                gl.RGBA,
+                gl.FLOAT,
+                initial_state,
+            )
+            return texture
         }
-    
+
         function newFramebuffer(gl, texture) {
-          var fb = gl.createFramebuffer()
-          gl.bindFramebuffer(gl.FRAMEBUFFER, fb)
-          gl.framebufferTexture2D(
-            gl.FRAMEBUFFER,
-            gl.COLOR_ATTACHMENT0,
-            gl.TEXTURE_2D,
-            texture,
-            0,
-          )
-          return fb
+            var fb = gl.createFramebuffer()
+            gl.bindFramebuffer(gl.FRAMEBUFFER, fb)
+            gl.framebufferTexture2D(
+                gl.FRAMEBUFFER,
+                gl.COLOR_ATTACHMENT0,
+                gl.TEXTURE_2D,
+                texture,
+                0,
+            )
+            return fb
         }
-    
+
         function loadVertexData(gl, prog) {
-          gl.bindBuffer(gl.ARRAY_BUFFER, gl.createBuffer())
-          gl.bufferData(
-            gl.ARRAY_BUFFER,
-            new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]),
-            gl.STATIC_DRAW,
-          )
-          var a_position = gl.getAttribLocation(prog, "a_position")
-          gl.enableVertexAttribArray(a_position)
-          gl.vertexAttribPointer(a_position, 2, gl.FLOAT, false, 0, 0)
+            gl.bindBuffer(gl.ARRAY_BUFFER, gl.createBuffer())
+            gl.bufferData(
+                gl.ARRAY_BUFFER,
+                new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]),
+                gl.STATIC_DRAW,
+            )
+            var a_position = gl.getAttribLocation(prog, "a_position")
+            gl.enableVertexAttribArray(a_position)
+            gl.vertexAttribPointer(a_position, 2, gl.FLOAT, false, 0, 0)
         }
-    
+
         function createAndLinkProgram(gl, vertex_shader, fragment_shader) {
-          var prog = gl.createProgram()
-          gl.attachShader(prog, vertex_shader)
-          gl.attachShader(prog, fragment_shader)
-          gl.linkProgram(prog)
-          if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) {
-            fail("Failed to link program: " + gl.getProgramInfoLog(prog))
-          }
-          return prog
+            var prog = gl.createProgram()
+            gl.attachShader(prog, vertex_shader)
+            gl.attachShader(prog, fragment_shader)
+            gl.linkProgram(prog)
+            if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) {
+                fail("Failed to link program: " + gl.getProgramInfoLog(prog))
+            }
+            return prog
         }
-    
+
         function createShader(gl, shader_type, shader_code_id) {
-          var shader = gl.createShader(shader_type)
-          gl.shaderSource(shader, document.getElementById(shader_code_id).text)
-          gl.compileShader(shader)
-          if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
-            var err = gl.getShaderInfoLog(shader)
-            fail("Failed to compile shader: " + err)
-          }
-          return shader
+            var shader = gl.createShader(shader_type)
+            gl.shaderSource(shader, document.getElementById(shader_code_id).text)
+            gl.compileShader(shader)
+            if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+                var err = gl.getShaderInfoLog(shader)
+                fail("Failed to compile shader: " + err)
+            }
+            return shader
         }
-    
+
         function checkCompatibility(gl) {
-          if (!gl) fail("WebGL is not supported")
-          var float_texture_ext = gl.getExtension("OES_texture_float")
-          if (!float_texture_ext)
-            fail(
-              "Your browser does not support the WebGL extension OES_texture_float",
-            )
-          window.float_texture_ext = float_texture_ext // Hold onto it
-          var max_texture_size = gl.getParameter(gl.MAX_TEXTURE_SIZE)
-          if (max_texture_size < 512)
-            fail(
-              "Your browser only supports " +
-              max_texture_size +
-              "×" +
-              max_texture_size +
-              " WebGL textures",
-            )
+            if (!gl) fail("WebGL is not supported")
+            var float_texture_ext = gl.getExtension("OES_texture_float")
+            if (!float_texture_ext)
+                fail(
+                    "Your browser does not support the WebGL extension OES_texture_float",
+                )
+            window.float_texture_ext = float_texture_ext // Hold onto it
+            var max_texture_size = gl.getParameter(gl.MAX_TEXTURE_SIZE)
+            if (max_texture_size < 512)
+                fail(
+                    "Your browser only supports " +
+                    max_texture_size +
+                    "×" +
+                    max_texture_size +
+                    " WebGL textures",
+                )
         }
-    
+
         function fail(message) {
-          console.error(message)
-          var body = document.querySelector("body")
-          body.style.backgroundColor = "#0D141C"
-          body.removeChild(document.getElementById("canvas"))
+            console.error(message)
+            var body = document.querySelector("body")
+            body.style.backgroundColor = "#0D141C"
+            body.removeChild(document.getElementById("canvas"))
         }
         init()
-      </script>
-  <div class="container">
-    <div></div>
-    <div class="title">
-      <h1>Doug <br>Morton</h1>
+    </script>
+    <div class="container">
+        <div></div>
+        <div class="title">
+            <a href="https://www.linkedin.com/in/mortondouglas/" target="_blank" class="nav-link">
+                <h1>Doug <br>Morton</h1>
+            </a>
+        </div>
+        <div class="footer">
+            <div>
+                <a href="https://www.linkedin.com/in/mortondouglas/" target="_blank" class="nav-link">
+                    <img src="https://raw.githubusercontent.com/DMortonUK/website/2667be8f8c83e5092290df2ecee53f06cad459a7/linkedin.svg"
+                        alt="Doug Morton's LinkedIn" class="nav-icon">
+                    <span>LinkedIn</span>
+                </a>
+            </div>
+            <div>
+                <a href="https://www.linkedin.com/in/mortondouglas/">Doug Morton</a> &copy; <span id="year"></span>
+            </div>
+        </div>
     </div>
-    <div class="footer">
-      <div>
-        <a href="https://www.linkedin.com/in/mortondouglas/" target="_blank" class="nav-link">
-          <img src="https://github.com/DMortonUK/website.github.io/blob/main/linkedin.svg?raw=true" alt="Doug Morton's LinkedIn" class="nav-icon">
-          <span>LinkedIn</span>
-        </a>
-      </div>
-      <div>
-        <a href="https://www.linkedin.com/in/mortondouglas/">Doug Morton</a> &copy; <span id="year"></span>
-      </div>
-    </div>
-  </div>
-  
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
 </body>
 
 </html>
